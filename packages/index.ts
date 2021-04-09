@@ -1,1 +1,2 @@
-export { Transition } from './transition'
+export { Transition } from './transition';
+export { Teleport } from './teleport'
