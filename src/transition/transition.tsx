@@ -47,13 +47,13 @@ const _Transition: React.FC<PropsWithChildren<TransitionProps>> = (props) => {
 
   const renderChildren = useCallback(() => {
     if (React.isValidElement(preChildren.current)) {
-      const className = classnames(preChildren.current.props.className, {
+      const cls = classnames(preChildren.current.props.className, {
         [`${props.name}-enter-active`]: props.show,
         [`${props.name}-leave-active`]: !props.show,
       });
       return React.cloneElement(React.Children.only(preChildren.current), {
         ref,
-        className,
+        className: cls,
       });
     }
     return null;
