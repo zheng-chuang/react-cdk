@@ -8,7 +8,7 @@ type TeleportType = React.FC<PropsWithChildren<TeleportProps>>;
 
 export const Teleport: TeleportType = memo((props) => {
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
-  const { to="body" } = props
+  const { to = "body" } = props;
   const renderPortal = useCallback(() => {
     const waitForDom = () => {
       const host = document.querySelector(to);
