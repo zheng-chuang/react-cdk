@@ -24,7 +24,7 @@ export const Teleport: TeleportType = memo((props) => {
       return null;
     }
     return ReactDOM.createPortal(props.children, dom);
-  }, []);
+  }, [props.children]);
   return renderPortal();
 });
 
