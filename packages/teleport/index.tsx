@@ -1,5 +1,6 @@
 import React, { memo, PropsWithChildren, useCallback, useReducer } from "react";
 import ReactDOM from "react-dom";
+import { useForceUpdate } from "../composables";
 interface TeleportProps {
   to?: string;
 }
@@ -7,7 +8,7 @@ interface TeleportProps {
 type TeleportType = React.FC<PropsWithChildren<TeleportProps>>;
 
 export const Teleport: TeleportType = memo((props) => {
-  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+  const forceUpdate = useForceUpdate()
   const { to = "body" } = props;
   const renderPortal = useCallback(() => {
     const waitFindHost = () => {
