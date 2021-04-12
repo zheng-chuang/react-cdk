@@ -1,13 +1,9 @@
 {
   "extends": "./config/tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "lib"
+    "outDir": "lib",
+    "typeRoots": ["node_modules/@types", "typings"]
   },
-  "include": [
-    "packages"
-  ],
-  "exclude": [
-    "./test",
-    "node_modules"
-  ]
+  "include": ["packages", "./typings"],
+  "exclude": ["./test", "node_modules"]
 }
